@@ -223,16 +223,7 @@ int main(int argc, char *argv[]) {
       for (int j = 0; j < NDIRECT; ++j) {
         if (dip[i].addrs[j] != 0) {
           used_addr[dip[i].addrs[j]] = 1; // set this address to used.
-          unsigned char bitmap_byte = *(bitmap + (dip[i].addrs[j] / 8));
-          //printf("dip i addrs j = %u\n", dip[i].addrs[j]);
-          //printf("bitmap_byte = %x\n", bitmap_byte);
-          int bitmap_pos = dip[i].addrs[j] % 8;
-          //printf("bitmap_pos = %d\n", bitmap_pos);
-          unsigned char final_bit = (bitmap_byte >> bitmap_pos);
-          final_bit = final_bit << 7;
-          //final_bit = final_bit >> 7;
-          //printf("final bit = %u\n", final_bit);
-          if (final_bit == 0) {
+          if (bitmap_arr[dip[i].addrs[j]] == 0) {
             fprintf(stderr, "ERROR: address used by inode but marked free in bitmap.\n");
             exit(1);
           }
@@ -248,14 +239,7 @@ int main(int argc, char *argv[]) {
         for (int i = 0; i < BSIZE/sizeof(uint); ++i) {
           if (indir_addrs[i] != 0) {
             used_addr[indir_addrs[i]] = 1;
-            unsigned char bitmap_byte = *(bitmap + (indir_addrs[i] / 8));
-            int bitmap_pos = indir_addrs[i] % 8;
-            unsigned char final_bit = (bitmap_byte >> bitmap_pos);
-            final_bit = final_bit << 7;
-            
-            if (final_bit == 0) {
-              //printf("testing...\n");
-              //printf("final_bit = %d\n", (int)final_bit);
+            if (bitmap_arr[indir_addrs[i]] == 0) {
               fprintf(stderr, "ERROR: address used by inode but marked free in bitmap.\n");
               exit(1);
             }
@@ -277,9 +261,6 @@ int main(int argc, char *argv[]) {
     }
   }
   
-
-
-
 
 
   return 0;
