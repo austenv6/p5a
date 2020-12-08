@@ -175,15 +175,15 @@ ld  -m    elf_i386 -nostdlib --omagic \
 dd if=/dev/zero of=xv6.img count=10000
 10000+0 records in
 10000+0 records out
-5120000 bytes (5.1 MB, 4.9 MiB) copied, 0.0196185 s, 261 MB/s
+5120000 bytes (5.1 MB, 4.9 MiB) copied, 0.0195982 s, 261 MB/s
 dd if=kernel/bootblock of=xv6.img conv=notrunc
 1+0 records in
 1+0 records out
-512 bytes copied, 5.4783e-05 s, 9.3 MB/s
+512 bytes copied, 5.3809e-05 s, 9.5 MB/s
 dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
 276+1 records in
 276+1 records out
-141576 bytes (142 kB, 138 KiB) copied, 0.000495863 s, 286 MB/s
+141576 bytes (142 kB, 138 KiB) copied, 0.00049733 s, 285 MB/s
 gcc -c  -iquote include -Wall -Werror -ggdb  -o tools/mkfs.o tools/mkfs.c
 gcc  tools/mkfs.o -o tools/mkfs
 mkdir -p fs
@@ -278,7 +278,7 @@ Test Good
 run on a good filesystem
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Good
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Good
 
 
 test Good PASSED (5 of 5)
@@ -292,7 +292,7 @@ Test Goodrefcnt
 run on fs with only good reference counts
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodrefcnt
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodrefcnt
 
 
 test Goodrefcnt PASSED (2 of 2)
@@ -306,7 +306,7 @@ Test Nonexistant
 run on a nonexistant filesystem
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Nonexistant
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Nonexistant
 
 
 test Nonexistant PASSED (2 of 2)
@@ -320,7 +320,7 @@ Test Badroot
 run on a filesystem with a root directory in bad location
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badroot
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badroot
 
 
 test Badroot PASSED (5 of 5)
@@ -334,7 +334,7 @@ Test Badinode
 run on a filesystem with a bad type in an inode
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badinode
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badinode
 
 
 test Badinode PASSED (5 of 5)
@@ -348,7 +348,7 @@ Test Badaddr
 run on a filesystem with a bad direct address in an inode
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badaddr
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badaddr
 
 
 test Badaddr PASSED (5 of 5)
@@ -362,7 +362,7 @@ Test Badindir1
 run on a filesystem with a bad indirect address in an inode
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badindir1
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badindir1
 
 
 test Badindir1 PASSED (5 of 5)
@@ -376,7 +376,7 @@ Test Badroot2
 run on a filesystem with a bad root directory in good location
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badroot2
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badroot2
 
 
 test Badroot2 PASSED (5 of 5)
@@ -390,7 +390,7 @@ Test Badfmt
 run on a filesystem without . or .. directories
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badfmt
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badfmt
 
 
 test Badfmt PASSED (5 of 5)
@@ -404,7 +404,7 @@ Test Mrkfree
 run on a filesystem with an inuse direct block marked free
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Mrkfree
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Mrkfree
 
 
 test Mrkfree PASSED (5 of 5)
@@ -418,7 +418,7 @@ Test Indirfree
 run on a filesystem with an inuse indirect block marked free
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Indirfree
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Indirfree
 
 
 test Indirfree PASSED (5 of 5)
@@ -432,7 +432,7 @@ Test Mrkused
 run on a filesystem with a free block marked used
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Mrkused
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Mrkused
 
 
 test Mrkused PASSED (5 of 5)
@@ -446,13 +446,11 @@ Test Addronce
 run on a filesystem with an address used more than once
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Addronce
-Failure: ./xv6_fsck returned incorrect status code. Expected 1 got 0
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Addronce
 
 
-test Addronce FAILED (0 of 5)
+test Addronce PASSED (5 of 5)
  (run on a filesystem with an address used more than once)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
 starting Imrkused
 
@@ -462,13 +460,11 @@ Test Imrkused
 run with inode marked used, but not referenced in a directory
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Imrkused
-Failure: ./xv6_fsck returned incorrect status code. Expected 1 got 0
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Imrkused
 
 
-test Imrkused FAILED (0 of 5)
+test Imrkused PASSED (5 of 5)
  (run with inode marked used, but not referenced in a directory)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
 starting Imrkfree
 
@@ -478,13 +474,11 @@ Test Imrkfree
 run with inode marked free, but referenced in a directory
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Imrkfree
-Failure: ./xv6_fsck returned incorrect status code. Expected 1 got 0
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Imrkfree
 
 
-test Imrkfree FAILED (0 of 5)
+test Imrkfree PASSED (5 of 5)
  (run with inode marked free, but referenced in a directory)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
 starting Badrefcnt
 
@@ -494,13 +488,11 @@ Test Badrefcnt
 run on fs which has an inode with a bad reference count
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badrefcnt
-Failure: ./xv6_fsck returned incorrect status code. Expected 1 got 0
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badrefcnt
 
 
-test Badrefcnt FAILED (0 of 5)
+test Badrefcnt PASSED (5 of 5)
  (run on fs which has an inode with a bad reference count)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
 starting Badindir2
 
@@ -510,13 +502,11 @@ Test Badindir2
 run on a filesystem with a bad indirect address in an inode
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badindir2
-Failure: ./xv6_fsck returned incorrect status code. Expected 1 got -11
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Badindir2
 
 
-test Badindir2 FAILED (0 of 5)
+test Badindir2 PASSED (5 of 5)
  (run on a filesystem with a bad indirect address in an inode)
- ./xv6_fsck returned incorrect status code. Expected 1 got -11
 
 starting Dironce
 
@@ -526,13 +516,11 @@ Test Dironce
 run on fs with a directory appearing more than once
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Dironce
-Failure: ./xv6_fsck returned incorrect status code. Expected 1 got 0
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Dironce
 
 
-test Dironce FAILED (0 of 5)
+test Dironce PASSED (5 of 5)
  (run on fs with a directory appearing more than once)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
 starting Goodrm
 
@@ -542,7 +530,7 @@ Test Goodrm
 run on good fs with a file removed and a new directory created
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodrm
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodrm
 
 
 test Goodrm PASSED (5 of 5)
@@ -556,7 +544,7 @@ Test Goodrm2
 run on good fs with a new directory created and then a file removed
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodrm2
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodrm2
 
 
 test Goodrm2 PASSED (3 of 3)
@@ -570,7 +558,7 @@ Test Goodlink
 run on good fs with some hard links and a linked file removed
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodlink
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodlink
 
 
 test Goodlink PASSED (3 of 3)
@@ -584,13 +572,11 @@ Test Goodlarge
 run on large good fs
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodlarge
-Failure: ./xv6_fsck returned incorrect status code. Expected 0 got 1
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Goodlarge
 
 
-test Goodlarge FAILED (0 of 5)
+test Goodlarge PASSED (5 of 5)
  (run on large good fs)
- ./xv6_fsck returned incorrect status code. Expected 0 got 1
 
 starting Mismatch
 
@@ -600,13 +586,15 @@ Test Mismatch
 **extra** run on a filesystem with .. pointing to the wrong directory
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Mismatch
-Failure: ./xv6_fsck returned incorrect status code. Expected 1 got 0
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Mismatch
+Failure: ./xv6_fsck gave incorrect standard error.
+Expected: "ERROR: parent directory mismatch.\n"
+Got:      "ERROR: bad reference count for file.\n"
 
 
 test Mismatch FAILED (0 of 5)
  (**extra** run on a filesystem with .. pointing to the wrong directory)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
+ ./xv6_fsck gave incorrect standard error.
 
 starting Loop
 
@@ -616,7 +604,7 @@ Test Loop
 **extra**  run on a filesystem with a loop in directory tree
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Loop
+/tmp/tmpSd4Jja/p/./xv6_fsck /u/c/s/cs537-10/ta/tests/p5a/images/Loop
 Failure: ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
 
@@ -632,7 +620,7 @@ Test Repair
 **extra**  repair a filesystem with lost inodes. check if every lost inode is found
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck -r /tmp/tmpSpgU9e/p/Repair
+/tmp/tmpSd4Jja/p/./xv6_fsck -r /tmp/tmpSd4Jja/p/Repair
 Usage: xv6_fsck <file_system_image>.
 
 
@@ -648,7 +636,7 @@ Test Repair2
 **extra**   repair a filesystem with lost inodes. check if there are any inconsistencies in the repaired image.
 
 **********************************************************************
-/tmp/tmpSpgU9e/p/./xv6_fsck -r /tmp/tmpSpgU9e/p/Repair2
+/tmp/tmpSd4Jja/p/./xv6_fsck -r /tmp/tmpSd4Jja/p/Repair2
 Usage: xv6_fsck <file_system_image>.
 
 
@@ -698,29 +686,23 @@ test Indirfree PASSED (5 of 5)
 test Mrkused PASSED (5 of 5)
  (run on a filesystem with a free block marked used)
 
-test Addronce FAILED (0 of 5)
+test Addronce PASSED (5 of 5)
  (run on a filesystem with an address used more than once)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
-test Imrkused FAILED (0 of 5)
+test Imrkused PASSED (5 of 5)
  (run with inode marked used, but not referenced in a directory)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
-test Imrkfree FAILED (0 of 5)
+test Imrkfree PASSED (5 of 5)
  (run with inode marked free, but referenced in a directory)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
-test Badrefcnt FAILED (0 of 5)
+test Badrefcnt PASSED (5 of 5)
  (run on fs which has an inode with a bad reference count)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
-test Badindir2 FAILED (0 of 5)
+test Badindir2 PASSED (5 of 5)
  (run on a filesystem with a bad indirect address in an inode)
- ./xv6_fsck returned incorrect status code. Expected 1 got -11
 
-test Dironce FAILED (0 of 5)
+test Dironce PASSED (5 of 5)
  (run on fs with a directory appearing more than once)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
 
 test Goodrm PASSED (5 of 5)
  (run on good fs with a file removed and a new directory created)
@@ -731,13 +713,12 @@ test Goodrm2 PASSED (3 of 3)
 test Goodlink PASSED (3 of 3)
  (run on good fs with some hard links and a linked file removed)
 
-test Goodlarge FAILED (0 of 5)
+test Goodlarge PASSED (5 of 5)
  (run on large good fs)
- ./xv6_fsck returned incorrect status code. Expected 0 got 1
 
 test Mismatch FAILED (0 of 5)
  (**extra** run on a filesystem with .. pointing to the wrong directory)
- ./xv6_fsck returned incorrect status code. Expected 1 got 0
+ ./xv6_fsck gave incorrect standard error.
 
 test Loop FAILED (0 of 5)
  (**extra**  run on a filesystem with a loop in directory tree)
@@ -751,6 +732,6 @@ test Repair2 FAILED (0 of 5)
  (**extra**   repair a filesystem with lost inodes. check if there are any inconsistencies in the repaired image.)
  image is not correctly repaired.
 
-Passed 16 of 27 tests.
-Overall 16 of 27
-Points 65 of 120
+Passed 23 of 27 tests.
+Overall 23 of 27
+Points 100 of 120
